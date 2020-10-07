@@ -1,17 +1,29 @@
 <h1 align="center">Introduction to Software Vulnerabilities</h1>
 
-##Introduction
+## Introduction
 With the world becoming ever more dependent on computer systems, the need to protect data, information technology infastructure, and business critical applications becomes increasingly more obvious. Software vulnerabilities are discovered everyday and the exploitation of these flaws are responsible for a projected six trillion dollars (USD) by 2021 (https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/). Education into developing software with security in mind can help reduce the massive costs of security breaches that are inneabled through software faults.
 
-##Types of Vulnerabilities
+## General Information
+Vulnerabilities for specific software can be searched through a Common Vulnerability and Exposure (CVE) number. These numbers are in the format of CVE-Year-Number. An example would be CVE-2019-0708 which in this case was a very severe Microsoft vulnerability. CVEs can be registered here: https://cve.mitre.org/index.html. Vulnerabilities that do not have a CVE associated with them are refered to as zero-day vulnerabilities. 
+
+## Types of Vulnerabilities
 |Type | Description |
 |---------|------------|
-|Buffer Overflow | asd |
-|OS Command Injection| asd |
-|SQL Injection|
-|Cross Site Scripting|
-|Cross Site Request Forgery|
-|URL Redirection|
-|Path Traversal| One of my favorites, allows the attacker to travese a directory that they should not have access to. For example if files are uploaded on a server in the /usr/uploads directory, a malicous actor can navigate through unsanitized input, to the /usr directory and other sub directories.|
-|Unrestricted Upload of Malicous Files|
+|Buffer Overflow | Buffer overflows occur when the buffer or variable is too small to handle the data that it is holding. The data is then moved to a volatile state which could crash the program or potentially execute commands. Buffer overflows are very common ways to achieve code execution on an affected application or machine. |
+|OS Command Injection| As the name implies, OS Command Injection is an attack where an attacker (often remote) attempts to run arbitrary system commands on a target. |
+|SQL Injection| SQL injection allows a malicous actor to inject SQL commands to a database. The attacker can dump sensitive user data, create new tables or views, and drop (delete) user data in some cases. |
+|Cross Site Scripting| Server side scripts that are injected into web pages. Other users may be able to view the results of this script and potentially interact with malicous files or commands. |
+|Cross Site Request Forgery| Similar to Cross Site Scripting however the attacker can send requests to outside entities. A shocking example would be sending a false request to a victims bank account to send money to the attackers. |
+|URL Redirection| Redirection attacks allow an attacker to move traffic toward a specified website. This can be used to steal web traffic, deliver a malicous file, or to deny service.
+|Path Traversal| One of my favorites, allows the attacker to travese a directory that they should not have access to. For example if files are uploaded on a server in the /usr/uploads directory, a malicous actor can navigate using unsanitized input, to the /usr directory and other sub directories.|
+|Unrestricted Upload of Malicous Files| If data is unsanitized a malicous actor can drop malicous code through various file-formats. If the code is run on the server it is classified as remote code execution. |
 
+
+## Key Takeaways
+Make sure to develop using security in mind principles. Using code reviews and vulnerability scanning (or if the resources exist, penetration testing) is vital to software engineering. Always sanitize user data as a general rule of thumb.
+
+## Topics not Covered
+
+
+## Further Reading 
+If you would like more information about software vulnerabilities, please check out these links below:
